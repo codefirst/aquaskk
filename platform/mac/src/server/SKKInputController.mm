@@ -24,6 +24,7 @@
 #include "SKKLayoutManager.h"
 #include "SKKInputSession.h"
 #include "SKKBackEnd.h"
+#include "DDHotKeyCenter.h"
 
 #include "SKKPreProcessor.h"
 #include "SKKConstVars.h"
@@ -102,8 +103,24 @@
 }
 
 // IMKStateSetting
+- (void) hotkeyWithEvent:(NSEvent *)hkEvent {
+    NSLog(@"hotkey fire");
+    SKKEvent param;
+    param.id = SKK_HIRAKANA_MODE;
+    session_->HandleEvent(param);
+    modeIcon_->SelectInputMode([menu_ convertIdToInputMode:@"com.apple.inputmethod.Hirakana"]);
+}
+
 - (void)activateServer:(id)sender {
     [NSUserDefaults resetStandardUserDefaults];
+
+    DDHotKeyCenter *c = [DDHotKeyCenter sharedHotKeyCenter];
+    [c unregisterHotKeyWithKeyCode:kVK_ANSI_C modifierFlags:NSControlKeyMask];
+    if (![c registerHotKeyWithKeyCode:kVK_ANSI_C modifierFlags:NSControlKeyMask target:self action:@selector(hotkeyWithEvent:) object:nil]) {
+        [self debug:@"hotkey failure"];
+    } else {
+        [self debug:@"hotkey success"];
+    }
     
     if([self directMode]) return;
 

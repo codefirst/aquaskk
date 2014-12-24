@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>676EF2E6-545B-4A82-9013-474A3D1E8224</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AquaSKK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F29A024EB95E208267D5B062F4A14E0F02E25B0F</key>
+		<string>github.com:codefirst/aquaskk.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platform/mac/proj/AquaSKK.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F29A024EB95E208267D5B062F4A14E0F02E25B0F</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:codefirst/aquaskk.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F29A024EB95E208267D5B062F4A14E0F02E25B0F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F29A024EB95E208267D5B062F4A14E0F02E25B0F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>aquaskk</string>
+		</dict>
+	</array>
+</dict>
+</plist>
