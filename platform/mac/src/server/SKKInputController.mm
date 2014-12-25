@@ -106,9 +106,8 @@
 - (void) hotkeyWithEvent:(NSEvent *)hkEvent {
     NSLog(@"hotkey fire");
     SKKEvent param;
-    param.id = SKK_HIRAKANA_MODE;
+    param.id = SKK_JMODE;
     session_->HandleEvent(param);
-    modeIcon_->SelectInputMode([menu_ convertIdToInputMode:@"com.apple.inputmethod.Hirakana"]);
 }
 
 - (void)activateServer:(id)sender {
