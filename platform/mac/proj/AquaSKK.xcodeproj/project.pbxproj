@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132305F31A4B0C30005574E5 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 132305F21A4B0C30005574E5 /* DDHotKeyCenter.m */; };
+		132305F61A4B0C68005574E5 /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 132305F51A4B0C68005574E5 /* DDHotKeyUtilities.m */; };
 		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
 		D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */; };
 		D30996690E4C80EA00B2F24E /* SKKRecursiveEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30996670E4C80EA00B2F24E /* SKKRecursiveEditor.cpp */; };
@@ -149,6 +151,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		132305F11A4B0C30005574E5 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
+		132305F21A4B0C30005574E5 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
+		132305F41A4B0C68005574E5 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
+		132305F51A4B0C68005574E5 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
 		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
 		D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputEnvironment.cpp; sourceTree = "<group>"; };
 		D3045879102D3E590055E32F /* SKKInputEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputEnvironment.h; sourceTree = "<group>"; };
@@ -657,6 +663,10 @@
 		D353BDCE0E175513004C68A6 /* server */ = {
 			isa = PBXGroup;
 			children = (
+				132305F11A4B0C30005574E5 /* DDHotKeyCenter.h */,
+				132305F21A4B0C30005574E5 /* DDHotKeyCenter.m */,
+				132305F41A4B0C68005574E5 /* DDHotKeyUtilities.h */,
+				132305F51A4B0C68005574E5 /* DDHotKeyUtilities.m */,
 				D38FB82A1032F33100048A30 /* MacConfig.h */,
 				D38FB82B1032F33100048A30 /* MacConfig.mm */,
 				D3CB86760EB47E970069107D /* MacAnnotator.h */,
@@ -1028,6 +1038,7 @@
 				D353BD120E175501004C68A6 /* SKKKeymap.cpp in Sources */,
 				D353BD130E175501004C68A6 /* SKKKeymapEntry.cpp in Sources */,
 				D353BD140E175501004C68A6 /* SKKInlineSelector.cpp in Sources */,
+				132305F31A4B0C30005574E5 /* DDHotKeyCenter.m in Sources */,
 				D353BD150E175501004C68A6 /* SKKSelector.cpp in Sources */,
 				D353BD160E175501004C68A6 /* SKKWindowSelector.cpp in Sources */,
 				D353BD190E175501004C68A6 /* SKKInputSession.cpp in Sources */,
@@ -1077,6 +1088,7 @@
 				D3AD8DA81119C6A800809EA2 /* SKKHttpDictionaryLoader.cpp in Sources */,
 				D32ABEDE11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp in Sources */,
 				D3E29EBC12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp in Sources */,
+				132305F61A4B0C68005574E5 /* DDHotKeyUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
