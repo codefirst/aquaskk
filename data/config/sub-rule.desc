@@ -5,3 +5,4 @@
 period.rule     句点をピリオド(．)にする
 comma.rule      読点をカンマ(，)にする
 azik.rule       拡張ローマ字入力「AZIK」を使う
+warosu.rule     連続したwを入力する

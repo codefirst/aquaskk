@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1330B4C61A534D2D000EAA14 /* warosu.rule in Resources */ = {isa = PBXBuildFile; fileRef = 1330B4C51A534D2D000EAA14 /* warosu.rule */; };
 		D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */; };
 		D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3046C2B101F3228008A6F47 /* SKKLayoutManager.mm */; };
 		D30996690E4C80EA00B2F24E /* SKKRecursiveEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30996670E4C80EA00B2F24E /* SKKRecursiveEditor.cpp */; };
@@ -149,6 +150,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1330B4C51A534D2D000EAA14 /* warosu.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = warosu.rule; sourceTree = "<group>"; };
 		D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputModeListener.h; sourceTree = "<group>"; };
 		D3045878102D3E590055E32F /* SKKInputEnvironment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKInputEnvironment.cpp; sourceTree = "<group>"; };
 		D3045879102D3E590055E32F /* SKKInputEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKInputEnvironment.h; sourceTree = "<group>"; };
@@ -751,6 +753,7 @@
 				D357591910BD72E00066692B /* azik.rule */,
 				D3F0576410BAD12600F3233E /* period.rule */,
 				D3F0576310BAD12600F3233E /* comma.rule */,
+				1330B4C51A534D2D000EAA14 /* warosu.rule */,
 			);
 			name = config;
 			path = ../../../data/config;
@@ -965,6 +968,7 @@
 				D353BE120E175540004C68A6 /* kana-rule.conf in Resources */,
 				D353BE130E175540004C68A6 /* keymap.conf in Resources */,
 				D353BE1C0E175552004C68A6 /* AquaSKK-Ascii.png in Resources */,
+				1330B4C61A534D2D000EAA14 /* warosu.rule in Resources */,
 				EA56B0541A22CBA400954B5F /* Mini-Hirakana@2x.tiff in Resources */,
 				EA56B0491A22C62400954B5F /* AquaSKK-Ascii@2x.png in Resources */,
 				D353BE1D0E175552004C68A6 /* AquaSKK-Hirakana.png in Resources */,
