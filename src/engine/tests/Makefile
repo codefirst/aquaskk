@@ -34,7 +34,7 @@ SESSION_OBJS = SKKInputSession.o SKKRecursiveEditor.o SKKInputModeSelector.o \
 TRIE_OBJS = SKKRomanKanaConverter.o SKKTrie.o
 
 OTHER_OBJS = SKKEntry.o SKKCandidate.o \
-	SKKDictionaryFile.o SKKDictionaryKeeper.o \
+	SKKDictionaryFile.o SKKDictionaryEntry.o SKKDictionaryKeeper.o \
 	SKKCompleter.o SKKState.o jconv.o
 
 LIBOBJS	= $(DICT_OBJS) $(BACKEND_OBJS) $(KEYMAP_OBJS) $(SELECTOR_OBJS) \

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130B7D651C269A0C0081E7BD /* SKKCloudUserDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 130B7D631C269A0C0081E7BD /* SKKCloudUserDictionary.cpp */; };
+		130B7D6A1C269E6B0081E7BD /* MacCloudStrategy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 130B7D691C269E6B0081E7BD /* MacCloudStrategy.mm */; };
+		130B7D6D1C26B7950081E7BD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B7D6C1C26B7950081E7BD /* CloudKit.framework */; };
+		130B7D6F1C26B8F90081E7BD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B7D6C1C26B7950081E7BD /* CloudKit.framework */; };
+		130B7D711C26BA770081E7BD /* CloudKitDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B7D701C26BA770081E7BD /* CloudKitDatabase.m */; };
+		130B7D761C26CFE80081E7BD /* SKKDictionaryEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 130B7D751C26CFE80081E7BD /* SKKDictionaryEntry.cpp */; };
 		131E98E31BE4EE4600E898E6 /* act.conf in Resources */ = {isa = PBXBuildFile; fileRef = 131E98E21BE4EE4600E898E6 /* act.conf */; };
 		1326BC8D1BE7974B008F1D05 /* azik.conf in Resources */ = {isa = PBXBuildFile; fileRef = 1326BC8C1BE7974B008F1D05 /* azik.conf */; };
 		138EA4E61BE85B2400E8A70E /* azik_us.rule in Resources */ = {isa = PBXBuildFile; fileRef = 138EA4E51BE85B2400E8A70E /* azik_us.rule */; };
@@ -154,6 +160,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		130B7D631C269A0C0081E7BD /* SKKCloudUserDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKCloudUserDictionary.cpp; sourceTree = "<group>"; };
+		130B7D641C269A0C0081E7BD /* SKKCloudUserDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKCloudUserDictionary.h; sourceTree = "<group>"; };
+		130B7D671C269B6E0081E7BD /* SKKSyncStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKKSyncStrategy.h; sourceTree = "<group>"; };
+		130B7D681C269DFD0081E7BD /* MacCloudStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacCloudStrategy.h; sourceTree = "<group>"; };
+		130B7D691C269E6B0081E7BD /* MacCloudStrategy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacCloudStrategy.mm; sourceTree = "<group>"; };
+		130B7D6B1C26B78B0081E7BD /* AquaSKK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AquaSKK.entitlements; path = AquaSKK/AquaSKK.entitlements; sourceTree = "<group>"; };
+		130B7D6C1C26B7950081E7BD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		130B7D6E1C26B8EC0081E7BD /* AquaSKKPreferences.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AquaSKKPreferences.entitlements; sourceTree = "<group>"; };
+		130B7D701C26BA770081E7BD /* CloudKitDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudKitDatabase.m; sourceTree = "<group>"; };
+		130B7D721C26BA800081E7BD /* CloudKitDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudKitDatabase.h; sourceTree = "<group>"; };
+		130B7D741C26CD9A0081E7BD /* SKKDictionaryEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKKDictionaryEntry.h; sourceTree = "<group>"; };
+		130B7D751C26CFE80081E7BD /* SKKDictionaryEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SKKDictionaryEntry.cpp; sourceTree = "<group>"; };
 		131E98E21BE4EE4600E898E6 /* act.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = act.conf; sourceTree = "<group>"; };
 		1326BC8C1BE7974B008F1D05 /* azik.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik.conf; sourceTree = "<group>"; };
 		138EA4E51BE85B2400E8A70E /* azik_us.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = azik_us.rule; sourceTree = "<group>"; };
@@ -403,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FC33930DD1B52D006A3F5A /* InputMethodKit.framework in Frameworks */,
+				130B7D6D1C26B7950081E7BD /* CloudKit.framework in Frameworks */,
 				D3FC33970DD1B53A006A3F5A /* QuartzCore.framework in Frameworks */,
 				D3F467B90E9E5FAC000A8C6A /* Carbon.framework in Frameworks */,
 			);
@@ -413,15 +432,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FC339B0DD1B550006A3F5A /* Carbon.framework in Frameworks */,
+				130B7D6F1C26B8F90081E7BD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130B7D661C269A220081E7BD /* user-dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				D353BC000E175500004C68A6 /* SKKUserDictionary.h */,
+				130B7D641C269A0C0081E7BD /* SKKCloudUserDictionary.h */,
+				130B7D631C269A0C0081E7BD /* SKKCloudUserDictionary.cpp */,
+				D32ABEDD11BB5BFD00F86B42 /* SKKLocalUserDictionary.h */,
+				D32ABEDC11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp */,
+				D3E29EBB12D359FE00C055F9 /* SKKDistributedUserDictionary.h */,
+				D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */,
+			);
+			name = "user-dictionary";
+			sourceTree = "<group>";
+		};
+		130B7D731C26BA850081E7BD /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				130B7D681C269DFD0081E7BD /* MacCloudStrategy.h */,
+				130B7D691C269E6B0081E7BD /* MacCloudStrategy.mm */,
+				130B7D721C26BA800081E7BD /* CloudKitDatabase.h */,
+				130B7D701C26BA770081E7BD /* CloudKitDatabase.m */,
+			);
+			name = CloudKit;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* aquaskk */ = {
 			isa = PBXGroup;
 			children = (
+				130B7D6E1C26B8EC0081E7BD /* AquaSKKPreferences.entitlements */,
+				130B7D6C1C26B7950081E7BD /* CloudKit.framework */,
+				130B7D6B1C26B78B0081E7BD /* AquaSKK.entitlements */,
 				13E607831C2693A300FD8FB9 /* Images.xcassets */,
 				D3FC32270DD1B0D2006A3F5A /* Input Method */,
 				D3FC32360DD1B121006A3F5A /* Preferences */,
@@ -441,6 +489,7 @@
 				D396A06E0EA0C8B700B6B9D5 /* SKKMessenger.h */,
 				D353BBDE0E1754E3004C68A6 /* SKKClipboard.h */,
 				D3CB86750EB47E790069107D /* SKKAnnotator.h */,
+				130B7D671C269B6E0081E7BD /* SKKSyncStrategy.h */,
 				D376C0FA0EC728C7001B2CE9 /* SKKDynamicCompletor.h */,
 				D302E2F70EA068EF00E3321E /* SKKInputModeListener.h */,
 			);
@@ -497,20 +546,18 @@
 		D353BBF10E175500004C68A6 /* dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				130B7D661C269A220081E7BD /* user-dictionary */,
 				D353BBF40E175500004C68A6 /* SKKBaseDictionary.h */,
 				D353BBF30E175500004C68A6 /* SKKAutoUpdateDictionary.h */,
 				D353BBF60E175500004C68A6 /* SKKCommonDictionary.h */,
 				D353BBFE0E175500004C68A6 /* SKKProxyDictionary.h */,
 				D353BBFD0E175500004C68A6 /* SKKProxyDictionary.cpp */,
-				D353BC000E175500004C68A6 /* SKKUserDictionary.h */,
-				D32ABEDD11BB5BFD00F86B42 /* SKKLocalUserDictionary.h */,
-				D32ABEDC11BB5BFD00F86B42 /* SKKLocalUserDictionary.cpp */,
-				D3E29EBB12D359FE00C055F9 /* SKKDistributedUserDictionary.h */,
-				D3E29EBA12D359FE00C055F9 /* SKKDistributedUserDictionary.cpp */,
 				D3FF02C8100A2C9D0028EDE6 /* SKKGadgetDictionary.h */,
 				D3FF02C7100A2C9D0028EDE6 /* SKKGadgetDictionary.cpp */,
 				D3AD8DA31119C6A800809EA2 /* SKKCompletionHelper.h */,
 				D3AD8DA41119C6A800809EA2 /* SKKDictionaryTemplate.h */,
+				130B7D741C26CD9A0081E7BD /* SKKDictionaryEntry.h */,
+				130B7D751C26CFE80081E7BD /* SKKDictionaryEntry.cpp */,
 				D353BBF80E175500004C68A6 /* SKKDictionaryFile.h */,
 				D353BBF70E175500004C68A6 /* SKKDictionaryFile.cpp */,
 				D34531A510D14AF500D4EF49 /* SKKDictionaryLoader.h */,
@@ -690,6 +737,7 @@
 				D353BDD60E175513004C68A6 /* MacInputModeWindow.mm */,
 				D353BDD70E175513004C68A6 /* MacInputSessionParameter.h */,
 				D353BDD80E175513004C68A6 /* MacInputSessionParameter.mm */,
+				130B7D731C26BA850081E7BD /* CloudKit */,
 				D353BDDB0E175513004C68A6 /* ObjCUtil.h */,
 				D353BDDC0E175513004C68A6 /* SKKConstVars.h */,
 				D353BDDD0E175513004C68A6 /* SKKConstVars.mm */,
@@ -945,6 +993,24 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					D3FC32200DD1B09C006A3F5A = {
+						DevelopmentTeam = VG2YYSKSHY;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					D3FC322F0DD1B102006A3F5A = {
+						DevelopmentTeam = VG2YYSKSHY;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AquaSKK" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1028,6 +1094,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130B7D761C26CFE80081E7BD /* SKKDictionaryEntry.cpp in Sources */,
 				D353BCFB0E175501004C68A6 /* SKKBackEnd.cpp in Sources */,
 				D353BCFC0E175501004C68A6 /* SKKDictionaryCache.cpp in Sources */,
 				D353BCFD0E175501004C68A6 /* SKKDictionaryFactory.cpp in Sources */,
@@ -1044,6 +1111,7 @@
 				D353BD0E0E175501004C68A6 /* SKKRegisterEditor.cpp in Sources */,
 				D353BD0F0E175501004C68A6 /* SKKTextBuffer.cpp in Sources */,
 				D353BD100E175501004C68A6 /* SKKCandidate.cpp in Sources */,
+				130B7D651C269A0C0081E7BD /* SKKCloudUserDictionary.cpp in Sources */,
 				D353BD110E175501004C68A6 /* SKKEntry.cpp in Sources */,
 				D353BD120E175501004C68A6 /* SKKKeymap.cpp in Sources */,
 				D353BD130E175501004C68A6 /* SKKKeymapEntry.cpp in Sources */,
@@ -1064,6 +1132,7 @@
 				D353BDEE0E175513004C68A6 /* SKKConstVars.mm in Sources */,
 				D353BDEF0E175513004C68A6 /* SKKInputController.mm in Sources */,
 				D353BDF00E175513004C68A6 /* SKKPreProcessor.mm in Sources */,
+				130B7D6A1C269E6B0081E7BD /* MacCloudStrategy.mm in Sources */,
 				D353BDF10E175513004C68A6 /* SKKServer.mm in Sources */,
 				D353BDF20E175513004C68A6 /* SKKServerProxy.mm in Sources */,
 				D353BDF30E175513004C68A6 /* main.mm in Sources */,
@@ -1091,6 +1160,7 @@
 				D3046C2C101F3228008A6F47 /* SKKLayoutManager.mm in Sources */,
 				D3D549BF1024904000622CB2 /* SKKInputModeSelector.cpp in Sources */,
 				D304587A102D3E590055E32F /* SKKInputEnvironment.cpp in Sources */,
+				130B7D711C26BA770081E7BD /* CloudKitDatabase.m in Sources */,
 				D3790F431031B2F1007798E0 /* SKKOutputBuffer.cpp in Sources */,
 				D3790F441031B2F1007798E0 /* SKKUndoContext.cpp in Sources */,
 				D38FB82C1032F33100048A30 /* MacConfig.mm in Sources */,
@@ -1138,7 +1208,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
@@ -1147,7 +1217,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -1157,7 +1227,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
@@ -1170,6 +1240,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_ENTITLEMENTS = AquaSKK/AquaSKK.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1195,6 +1268,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = AquaSKK;
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -1208,6 +1282,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_ENTITLEMENTS = AquaSKK/AquaSKK.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1230,6 +1307,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = AquaSKK;
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -1243,6 +1321,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_ENTITLEMENTS = AquaSKKPreferences.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1260,6 +1341,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = AquaSKKPreferences;
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -1272,6 +1354,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_ENTITLEMENTS = AquaSKKPreferences.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1288,6 +1373,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = AquaSKKPreferences;
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;

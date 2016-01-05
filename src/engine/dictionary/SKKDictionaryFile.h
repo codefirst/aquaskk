@@ -27,13 +27,7 @@
 #include <deque>
 #include <iosfwd>
 #include <utility>
-
-// 「見出し語」と「変換候補」のペア(変換候補は分解する前の状態)
-typedef std::pair<std::string, std::string> SKKDictionaryEntry;
-
-// エントリのコンテナ
-typedef std::deque<SKKDictionaryEntry> SKKDictionaryEntryContainer;
-typedef SKKDictionaryEntryContainer::iterator SKKDictionaryEntryIterator;
+#include "SKKDictionaryEntry.h"
 
 // SKK 辞書ファイル
 class SKKDictionaryFile {

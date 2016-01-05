@@ -24,6 +24,7 @@
 #define ObjCUtil_h
 
 #include <Foundation/Foundation.h>
+#include <string>
 
 namespace ObjC {
     class RAIIPool {
@@ -38,6 +39,10 @@ namespace ObjC {
             if(pool_) [pool_ release];
         }
     };
+
+    inline NSString* nsstring(const std::string& str){
+        return [NSString stringWithCString: str.c_str() encoding:NSUTF8StringEncoding];
+    }
 }
 
 #endif

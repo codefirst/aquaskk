@@ -32,8 +32,10 @@
 #include "SKKDistributedUserDictionary.h"
 #include "SKKDictionaryFactory.h"
 #include "SKKConstVars.h"
+#include "SKKCloudUserDictionary.h"
 // #include "SKKPythonRunner.h"
 #include "MacKotoeriDictionary.h"
+#include "MacCloudStrategy.h"
 #include "skkserv.h"
 #include "InputModeWindow.h"
 
@@ -190,7 +192,15 @@ static void terminate(int) {
     NSString* userDictionary = [defaults stringForKey:SKKUserDefaultKeys::user_dictionary_path];
     userDictionary = [userDictionary stringByExpandingTildeInPath];
 
-    SKKBackEnd::theInstance().Initialize([userDictionary UTF8String], keys);
+    if([defaults boolForKey:SKKUserDefaultKeys::enable_icloud] == YES) {
+        SKKUserDictionary* dictionary = new SKKCloudUserDictionary(new SKKLocalUserDictionary(), new MacCloudStrategy());
+        dictionary->Initialize([userDictionary UTF8String]);
+        SKKBackEnd::theInstance().Initialize(dictionary, keys);
+    } else {
+        SKKUserDictionary* dictionary = new SKKLocalUserDictionary();
+        dictionary->Initialize([userDictionary UTF8String]);
+        SKKBackEnd::theInstance().Initialize([userDictionary UTF8String], keys);
+    }
 #else
     SKKUserDictionary* dictionary = 0;
 

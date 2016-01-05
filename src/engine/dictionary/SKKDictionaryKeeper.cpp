@@ -49,18 +49,6 @@ namespace {
             return compare(lhs, rhs.first);
         }
     };
-
-    // 逆引き用ファンクタ
-    class NotInclude {
-        std::string candidate_;
-
-    public:
-        NotInclude(const std::string& candidate) : candidate_(candidate) {}
-
-        bool operator()(const SKKDictionaryEntry& entry) const {
-            return entry.second.find(candidate_) == std::string::npos;
-        }
-    };
 }
 
 SKKDictionaryKeeper::SKKDictionaryKeeper(Encoding encoding)
@@ -93,7 +81,7 @@ std::string SKKDictionaryKeeper::ReverseLookup(const std::string& candidate) {
     SKKCandidateParser parser;
 
     std::remove_copy_if(container.begin(), container.end(),
-                        std::back_inserter(entries), NotInclude("/" + eucj_from_utf8(candidate)));
+                        std::back_inserter(entries), NotIncludeDicionaryEntry("/" + eucj_from_utf8(candidate)));
 
     for(unsigned i = 0; i < entries.size(); ++ i) {
         parser.Parse(utf8_from_eucj(entries[i].second));

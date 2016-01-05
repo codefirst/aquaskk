@@ -53,6 +53,7 @@ namespace SKKUserDefaultKeys {
     extern NSString* enable_annotation;
 
     extern NSString* user_dictionary_path;
+    extern NSString* enable_icloud;
 
     extern NSString* enable_skkserv;
     extern NSString* skkserv_localonly;

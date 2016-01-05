@@ -5,7 +5,7 @@
     <welcome file="welcome.rtf" />
     <license file="license.rtf" />
     <allowed-os-versions>
-        <os-version min="10.9.4" />
+        <os-version min="10.10" />
     </allowed-os-versions>
     <options customize="never" require-scripts="false"/>
     <choices-outline>

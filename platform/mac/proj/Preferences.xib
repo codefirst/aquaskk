@@ -7,7 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application">
+        <customObject id="-3" userLabel="Application" customClass="NSObject">
             <connections>
                 <outlet property="delegate" destination="3" id="126"/>
             </connections>
@@ -81,7 +81,7 @@
                             <tabViewItem label="入力設定" identifier="Input Settings" id="15">
                                 <view key="view" id="16">
                                     <rect key="frame" x="10" y="25" width="434" height="219"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="23">
                                             <rect key="frame" x="96" y="186" width="202" height="18"/>
@@ -458,7 +458,6 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="4" name="enabled" keyPath="selection.enable_dynamic_completion" id="290"/>
                                                 <binding destination="4" name="value" keyPath="selection.dynamic_completion_range" id="286">
                                                     <dictionary key="options">
                                                         <integer key="NSAllowsEditingMultipleValuesSelection" value="1"/>
@@ -475,6 +474,7 @@
                                                         <integer key="NSValidatesImmediately" value="1"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="4" name="enabled" keyPath="selection.enable_dynamic_completion" id="290"/>
                                             </connections>
                                         </textField>
                                         <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="281">
@@ -482,7 +482,6 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="100" doubleValue="1" id="282"/>
                                             <connections>
-                                                <binding destination="4" name="enabled" keyPath="selection.enable_dynamic_completion" id="292"/>
                                                 <binding destination="4" name="value" keyPath="selection.dynamic_completion_range" id="288">
                                                     <dictionary key="options">
                                                         <integer key="NSAllowsEditingMultipleValuesSelection" value="1"/>
@@ -497,6 +496,7 @@
                                                         <integer key="NSValidatesImmediately" value="1"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="4" name="enabled" keyPath="selection.enable_dynamic_completion" id="292"/>
                                             </connections>
                                         </stepper>
                                         <textField verticalHuggingPriority="750" id="283">
@@ -517,7 +517,7 @@
                             <tabViewItem label="変換" identifier="Candidates" id="14">
                                 <view key="view" id="34">
                                     <rect key="frame" x="10" y="25" width="434" height="219"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" id="42">
                                             <rect key="frame" x="223" y="184" width="147" height="17"/>
@@ -531,7 +531,7 @@
                                         <button id="41">
                                             <rect key="frame" x="212" y="81" width="213" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="584DC29B-EA40-4798-BE20-5919C8E0D117" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
+                                            <buttonCell key="cell" type="square" title="Font Name &amp; Size" bezelStyle="shadowlessSquare" image="505FA8A1-45B6-4A93-903F-B9DEC4383AD3" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="50">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <connections>
@@ -724,17 +724,17 @@
                             <tabViewItem label="辞書" identifier="Dictionaries" id="13">
                                 <view key="view" id="56">
                                     <rect key="frame" x="10" y="25" width="434" height="219"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="63">
-                                            <rect key="frame" x="17" y="39" width="400" height="147"/>
+                                            <rect key="frame" x="17" y="39" width="400" height="125"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="l1Z-dg-Fkx">
-                                                <rect key="frame" x="1" y="23" width="398" height="123"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <rect key="frame" x="1" y="0.0" width="398" height="124"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" headerView="64" id="67">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="123"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="101"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -762,12 +762,12 @@
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </tableHeaderCell>
-                                                                <popUpButtonCell key="dataCell" type="bevel" title="Pop Up" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="72">
+                                                                <popUpButtonCell key="dataCell" type="bevel" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="bezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="72">
                                                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <menu key="menu" title="OtherViews" id="73">
                                                                         <items>
-                                                                            <menuItem title="Pop Up" state="on" id="74"/>
+                                                                            <menuItem title="Pop Up" id="74"/>
                                                                         </items>
                                                                     </menu>
                                                                 </popUpButtonCell>
@@ -813,11 +813,11 @@
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="65">
-                                                <rect key="frame" x="1" y="130" width="398" height="16"/>
+                                                <rect key="frame" x="1" y="108" width="398" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="66">
-                                                <rect key="frame" x="383" y="23" width="16" height="123"/>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="66">
+                                                <rect key="frame" x="384" y="23" width="15" height="101"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <tableHeaderView key="headerView" id="64">
@@ -891,13 +891,24 @@
                                                 <action selector="browseLocation:" target="3" id="198"/>
                                             </connections>
                                         </button>
+                                        <button id="aTa-db-z9H">
+                                            <rect key="frame" x="97" y="169" width="107" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="iCloudで同期する" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="iuu-Av-OQq">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="4" name="value" keyPath="selection.enable_icloud" id="vLM-hC-V3F"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="その他" identifier="Other" id="12">
                                 <view key="view" id="82">
                                     <rect key="frame" x="10" y="25" width="434" height="219"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button id="168">
                                             <rect key="frame" x="123" y="185" width="96" height="18"/>
@@ -1160,7 +1171,7 @@
         </arrayController>
     </objects>
     <resources>
-        <image name="584DC29B-EA40-4798-BE20-5919C8E0D117" width="1" height="1">
+        <image name="505FA8A1-45B6-4A93-903F-B9DEC4383AD3" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

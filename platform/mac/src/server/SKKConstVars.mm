@@ -52,6 +52,7 @@ namespace SKKUserDefaultKeys {
     DECLARE_NSStringKey(enable_annotation);
 
     DECLARE_NSStringKey(user_dictionary_path);
+    DECLARE_NSStringKey(enable_icloud);
 
     DECLARE_NSStringKey(enable_skkserv);
     DECLARE_NSStringKey(skkserv_localonly);

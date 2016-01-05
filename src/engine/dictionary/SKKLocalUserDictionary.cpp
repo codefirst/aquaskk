@@ -31,51 +31,6 @@
 namespace {
     static const int MAX_IDLE_COUNT = 20;
     static const int MAX_SAVE_INTERVAL = 60 * 5;
-
-    // SKKDictionaryEntry と文字列を比較するファンクタ
-    class CompareUserDictionaryEntry: public std::unary_function<SKKDictionaryEntry, bool> {
-        const std::string str_;
-
-    public:
-        CompareUserDictionaryEntry(const std::string& str) : str_(str) {}
-
-        bool operator()(const SKKDictionaryEntry& entry) const {
-            return entry.first == str_;
-        }
-    };
-
-    // 逆引き用ファンクタ(SKKDictionaryKeeper と重複)
-    class NotInclude {
-        std::string candidate_;
-
-    public:
-        NotInclude(const std::string& candidate) : candidate_(candidate) {}
-
-        bool operator()(const SKKDictionaryEntry& entry) const {
-            return entry.second.find(candidate_) == std::string::npos;
-        }
-    };
-
-    SKKDictionaryEntryIterator find(SKKDictionaryEntryContainer& container, const std::string& query) {
-        return std::find_if(container.begin(), container.end(),
-                            CompareUserDictionaryEntry(query));
-    }
-
-    template <typename T>
-    void update(const SKKEntry& entry, const T& obj, SKKDictionaryEntryContainer& container) {
-        SKKCandidateSuite suite;
-        const std::string& index = entry.EntryString();
-        SKKDictionaryEntryIterator iter = find(container, index);
-
-        if(iter != container.end()) {
-            suite.Parse(iter->second);
-            container.erase(iter);
-        }
-
-        suite.Update(obj);
-
-        container.push_front(SKKDictionaryEntry(index, suite.ToString()));
-    }
 }
 
 SKKLocalUserDictionary::SKKLocalUserDictionary() : privateMode_(false) {}
@@ -135,7 +90,7 @@ std::string SKKLocalUserDictionary::ReverseLookup(const std::string& candidate) 
     SKKCandidateParser parser;
 
     std::remove_copy_if(container.begin(), container.end(),
-                        std::back_inserter(entries), NotInclude("/" + candidate));
+                        std::back_inserter(entries), NotIncludeDicionaryEntry("/" + candidate));
 
     for(unsigned i = 0; i < entries.size(); ++ i) {
         parser.Parse(entries[i].second);
@@ -169,13 +124,13 @@ void SKKLocalUserDictionary::Register(const SKKEntry& entry, const SKKCandidate&
         hint.first = entry.OkuriString();
         hint.second.push_back(candidate.ToString());
 
-        update(entry.EntryString(), hint, file_.OkuriAri());
+        update_entry(entry.EntryString(), hint, file_.OkuriAri());
     } else {
         SKKCandidate tmp(candidate);
 
         tmp.Encode();
 
-        update(entry.EntryString(), tmp, file_.OkuriNasi());
+        update_entry(entry.EntryString(), tmp, file_.OkuriNasi());
     }
 
     save();
@@ -207,12 +162,16 @@ void SKKLocalUserDictionary::SetPrivateMode(bool flag) {
     }
 }
 
+SKKDictionaryFile& SKKLocalUserDictionary::GetDicionaryFile() {
+    return file_;
+}
+
 // ======================================================================
 // private method
 // ======================================================================
 
 std::string SKKLocalUserDictionary::fetch(const SKKEntry& entry, SKKDictionaryEntryContainer& container) {
-    SKKDictionaryEntryIterator iter = find(container, entry.EntryString());
+    SKKDictionaryEntryIterator iter = find_entry(container, entry.EntryString());
 
     if(iter == container.end()) {
 	return std::string();
@@ -223,20 +182,7 @@ std::string SKKLocalUserDictionary::fetch(const SKKEntry& entry, SKKDictionaryEn
 
 void SKKLocalUserDictionary::remove(const SKKEntry& entry, const std::string& kanji,
 			       SKKDictionaryEntryContainer& container) {
-    SKKDictionaryEntryIterator iter = find(container, entry.EntryString());
-
-    if(iter == container.end()) return;
-
-    SKKCandidateSuite suite;
-
-    suite.Parse(iter->second);
-    suite.Remove(kanji);
-
-    if(suite.IsEmpty()) {
-	container.erase(iter);
-    } else {
-	iter->second = suite.ToString();
-    }
+    remove_entry(entry, kanji, container);
 }
 
 void SKKLocalUserDictionary::save(bool force) {
@@ -264,7 +210,7 @@ void SKKLocalUserDictionary::save(bool force) {
 
 void SKKLocalUserDictionary::fix() {
     SKKDictionaryEntryContainer& container = file_.OkuriNasi();
-    SKKDictionaryEntryIterator iter = find(container, "#");
+    SKKDictionaryEntryIterator iter = find_entry(container, "#");
 
     // ユーザー辞書の "#" は無意味なのでまるごと削除する 
     if(iter != container.end()) {
