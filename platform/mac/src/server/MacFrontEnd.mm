@@ -111,7 +111,7 @@ void MacFrontEnd::workaroundForBlacklistApp(NSString* string) {
 
 // workaroundが必要なアプリかどうかを判定する
 bool MacFrontEnd::isBlacklistApp() const {
-    NSArray *bundleIds = @[@"com.microsoft.powerpoint", @"com.jetbrains.pycharm", @"com.jetbrains.intellij"];
+    NSArray *bundleIds = @[@"com.microsoft.powerpoint", @"com.jetbrains.pycharm", @"com.jetbrains.intellij", @"com.hogbaysoftware.TaskPaper3"];
     for(NSString *bundleId in bundleIds) {
         if([[client_ bundleIdentifier] caseInsensitiveCompare:bundleId] == NSOrderedSame) {
             return true;
