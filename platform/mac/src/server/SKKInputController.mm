@@ -89,7 +89,7 @@
 
     bool result = session_->HandleEvent(param);
 
-    if(current != [menu_ currentInputMode] || param.id == SKK_JMODE) {
+    if(current != [menu_ currentInputMode] && param.id != SKK_JMODE) {
         [self workAroundForSpecificApplications];
     }
 
