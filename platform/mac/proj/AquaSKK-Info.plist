@@ -29,11 +29,11 @@
 				<key>TISInputSourceID</key>
 				<string>jp.sourceforge.inputmethod.aquaskk</string>
 				<key>TISIntendedLanguage</key>
-				<string>ja</string>
+				<string>en</string>
 				<key>tsInputModeAlternateMenuIconFileKey</key>
 				<string>AquaSKK-InputMethod.tif</string>
 				<key>tsInputModeDefaultStateKey</key>
-				<false/>
+				<true/>
 				<key>tsInputModeIsVisibleKey</key>
 				<true/>
 				<key>tsInputModeJISKeyboardShortcutKey</key>
@@ -45,7 +45,7 @@
 				<key>tsInputModePrimaryInScriptKey</key>
 				<true/>
 				<key>tsInputModeScriptKey</key>
-				<string>smJapanese</string>
+				<string>smRoman</string>
 			</dict>
 			<key>com.apple.inputmethod.Japanese.FullWidthRoman</key>
 			<dict>
