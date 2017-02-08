@@ -72,6 +72,7 @@ static const struct {
     { "RemoveTrigger",          RemoveTrigger,          TYPE_ATTRIBUTE },
     { "InputChars",             InputChars,             TYPE_ATTRIBUTE },
     { "CompConversion",         CompConversion,         TYPE_ATTRIBUTE },
+    { "PrefixSuffixConversion", PrefixSuffixConversion, TYPE_ATTRIBUTE },
 
     { "AlwaysHandled",          AlwaysHandled,          TYPE_HANDLE_OPTION },
     { "PseudoHandled",          PseudoHandled,          TYPE_HANDLE_OPTION },

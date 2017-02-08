@@ -71,7 +71,8 @@ enum {
     PrevCandidate               = (1 << 11),
     RemoveTrigger               = (1 << 12),
     InputChars			= (1 << 13),
-    CompConversion		= (1 << 14)
+    CompConversion		= (1 << 14),
+    PrefixSuffixConversion      = (1 << 15), // >による接頭語、接尾語変換
 };
 
 // 処理オプション
@@ -109,6 +110,7 @@ public:
     bool IsRemoveTrigger() const                { return attribute & RemoveTrigger; }
     bool IsInputChars() const	                { return attribute & InputChars; }
     bool IsCompConversion() const               { return attribute & CompConversion; }
+    bool IsPrefixSuffixConversion() const       { return attribute & PrefixSuffixConversion; }
 
     const static SKKEvent& Null() {
         static SKKEvent obj(SKK_NULL, 0, 0);
@@ -139,6 +141,7 @@ public:
         TEST_attribute(RemoveTrigger);
         TEST_attribute(InputChars);
         TEST_attribute(CompConversion);
+        TEST_attribute(PrefixSuffixConversion);
 
 #undef TEST_attribute
 

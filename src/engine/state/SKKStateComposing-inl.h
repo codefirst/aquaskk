@@ -100,9 +100,13 @@ State SKKState::Edit(const Event& event) {
             completer_.Execute(1);
         }
 
-        if(param.IsNextCandidate() || param.IsCompConversion()) {
+        if(param.IsNextCandidate() || param.IsCompConversion() || param.IsPrefixSuffixConversion()) {
             if(context_->entry.IsEmpty()) {
                 return State::Transition(&SKKState::KanaInput);
+            }
+
+            if(param.IsPrefixSuffixConversion()) {
+                editor_->HandleChar(param.code, param.IsDirect());
             }
 
             if(selector_.Execute(configuration_->MaxCountOfInlineCandidates())) {
@@ -156,6 +160,10 @@ State SKKState::KanaEntry(const Event& event) {
     case SKK_CHAR:
         // 変換
         if(param.IsNextCandidate()) break;
+
+        // 接尾語変換(入力がない場合は>を見出し語に含める)
+        if(!context_->entry.IsEmpty() && param.IsPrefixSuffixConversion()) break;
+
 
         // トグル変換 #1
         if(param.IsToggleKana()) {
