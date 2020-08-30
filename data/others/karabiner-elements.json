@@ -1,0 +1,245 @@
+{
+  "title": "AquaSKK for Jetbrain",
+  "rules": [
+    {
+      "description": "Change input source to full width ascii mode by L (QWERTY)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.FullWidthRoman$"
+              },
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to ascii mode by l (QWERTY)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.Ascii$"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to half width katakana mode by Q (QWERTY)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.HalfWidthKana$"
+              },
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to katakana mode by q (QWERTY)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "q"
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.Katakana$"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to full width ascii mode by L (Dvorak)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.FullWidthRoman$"
+              },
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to ascii mode by l (Dvorak)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.Ascii$"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to half width katakana mode by Q (Dvorak)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "x",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.HalfWidthKana$"
+              },
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change input source to katakana mode by q (Dvorak)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\..*"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^jp\\.sourceforge\\.inputmethod\\.aquaskk\\.Katakana$"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
