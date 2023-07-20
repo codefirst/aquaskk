@@ -50,22 +50,22 @@ SKKEvent SKKPreProcessor::Execute(const NSEvent* event) {
     int keycode = [event keyCode];
     int mods = 0;
 
-    if([event modifierFlags] & NSShiftKeyMask) {
+    if([event modifierFlags] & NSEventModifierFlagShift) {
 	if(std::isgraph(dispchar)) { // 空白類を除いた英数字記号
 	    charcode = dispchar;
 	}
 	mods += SKKKeyState::SHIFT;
     }
 
-    if([event modifierFlags] & NSControlKeyMask) {
+    if([event modifierFlags] & NSEventModifierFlagControl) {
 	mods += SKKKeyState::CTRL;
     }
 
-    if([event modifierFlags] & NSAlternateKeyMask) {
+    if([event modifierFlags] & NSEventModifierFlagOption) {
 	mods += SKKKeyState::ALT;
     }
 
-    if([event modifierFlags] & NSCommandKeyMask) {
+    if([event modifierFlags] & NSEventModifierFlagCommand) {
 	mods += SKKKeyState::META;
     }
 
@@ -76,7 +76,7 @@ SKKEvent SKKPreProcessor::Execute(const NSEvent* event) {
 
     SKKEvent result = keymap_.Fetch(charcode, keycode, mods);
 
-    if([event modifierFlags] & NSAlphaShiftKeyMask) {
+    if([event modifierFlags] & NSEventModifierFlagCapsLock) {
         result.option |= CapsLock;
     }
 

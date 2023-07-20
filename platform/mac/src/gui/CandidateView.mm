@@ -53,7 +53,7 @@
     int margin = [CandidateView cellSpacing];
 
     NSPoint offset = NSMakePoint(margin, margin);
-    int cellCount = [labels_ length];
+    NSUInteger cellCount = [labels_ length];
 
     for(unsigned index = 0; index < [candidateCells_ count]; ++ index) {
         CandidateCell* cell = [candidateCells_ objectAtIndex:index];

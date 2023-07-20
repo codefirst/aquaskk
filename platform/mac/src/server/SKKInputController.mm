@@ -287,7 +287,7 @@
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:@"デバッグ情報"];
     [alert setInformativeText:info];
-    [alert setAlertStyle:NSInformationalAlertStyle];
+    [alert setAlertStyle:NSAlertStyleInformational];
     [alert setIcon:[NSImage imageNamed:NSImageNameInfo]];
     [[alert window] setLevel:kCGPopUpMenuWindowLevel];
     [[alert window] setTitle:@"AquaSKK"];
@@ -296,8 +296,8 @@
 
     NSPasteboard* pb = [NSPasteboard generalPasteboard];
 
-    [pb declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:self];
-    [pb setString:info forType:NSStringPboardType];
+    [pb declareTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil] owner:self];
+    [pb setString:info forType:NSPasteboardTypeString];
 
     [info release];
 }
@@ -398,6 +398,8 @@
         [self changeInputMode:context_.selectedKeyboardInputSource];
         return system;
     }
+
+    return current;
 }
 
 - (void)cancelKeyEventForASCII {

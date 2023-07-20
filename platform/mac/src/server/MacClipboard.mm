@@ -25,8 +25,8 @@
 const std::string MacClipboard::PasteString() {
     NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
 
-    if([[pasteboard types] containsObject:NSStringPboardType] == YES) {
-        NSString* str = [pasteboard stringForType:NSStringPboardType];
+    if([[pasteboard types] containsObject:NSPasteboardTypeString] == YES) {
+        NSString* str = [pasteboard stringForType:NSPasteboardTypeString];
         return [str UTF8String];
     }
 

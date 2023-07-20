@@ -79,7 +79,7 @@ int SKKCompleter::minPosition() const {
 }
 
 int SKKCompleter::maxPosition() const {
-    return completions_.size() - 1;
+    return (int)(completions_.size() - 1);
 }
 
 void SKKCompleter::notify() {

@@ -109,7 +109,7 @@ void MacCandidateWindow::Update(SKKCandidateIterator begin, SKKCandidateIterator
 }
 
 int MacCandidateWindow::LabelIndex(char label) {
-    return [window_ indexOfLabel:label];
+    return (int)[window_ indexOfLabel:label];
 }
 
 // ------------------------------------------------------------

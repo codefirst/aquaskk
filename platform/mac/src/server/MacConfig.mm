@@ -71,7 +71,7 @@ bool MacConfig::DeleteOkuriWhenQuit() {
 int MacConfig::integerConfig(NSString* key) {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 
-    return [defaults integerForKey:key];
+    return (int)[defaults integerForKey:key];
 }
 
 bool MacConfig::boolConfig(NSString* key) {

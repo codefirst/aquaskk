@@ -259,7 +259,7 @@ namespace pthread {
         std::deque<pthread_t> pool_;
         std::deque<task*> tasks_;
         bool should_terminate_;
-        unsigned idle_threads_;
+        unsigned long idle_threads_;
 
         static void* handler(void* param) {
             pool* self = reinterpret_cast<pool*>(param);

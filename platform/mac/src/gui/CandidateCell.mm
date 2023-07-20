@@ -36,7 +36,7 @@
 - (id)initWithFont:(NSFont*)font {
     if(self = [super init]) {
 	entry_ = [[NSMutableAttributedString alloc] init];
-	attributes_ = [[NSDictionary dictionaryWithObjectsAndKeys:
+	attributes_ = [[NSMutableDictionary dictionaryWithObjectsAndKeys:
                     font, NSFontAttributeName,
                     [NSColor labelColor], NSForegroundColorAttributeName,
                     nil]
@@ -115,7 +115,7 @@
     } else {
         [[[NSColor blackColor] colorWithAlphaComponent:0.1] setFill];
     }
-    NSRectFillUsingOperation(focus, NSCompositeSourceOver);
+    NSRectFillUsingOperation(focus, NSCompositingOperationSourceOver);
 
     [[NSColor windowFrameColor] setStroke];
     [NSBezierPath strokeRect:focus];

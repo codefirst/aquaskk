@@ -34,7 +34,7 @@ void SKKEntry::SetEntry(const std::string& entry) {
     normal_entry_ = entry;
 
     if(!normal_entry_.empty()) {
-        unsigned last_index = normal_entry_.size() - 1;
+        unsigned long last_index = normal_entry_.size() - 1;
 
         // 見出し語末尾の prefix を取り除く(ex. "かk" → "か")
         if(normal_entry_.find_last_of(prefix_) == last_index) {

@@ -78,7 +78,7 @@
     pt.x = 3;
     pt.y = (NSHeight(frame) - [icon_ size].height) / 2.0;
 
-    [icon_ drawAtPoint:pt fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
+    [icon_ drawAtPoint:pt fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0];
     [message_ drawAtPoint:NSMakePoint(pt.x + [icon_ size].width + 2, 4) withAttributes:attributes_];
 }
 

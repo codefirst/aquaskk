@@ -30,8 +30,8 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 - (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet*)indexSet toIndex:(unsigned int)insertIndex {
     NSArray* objects = [self arrangedObjects];
     NSUInteger idx = [indexSet lastIndex];
-    int aboveInsertIndexCount = 0;
-    int removeIndex;
+    NSUInteger aboveInsertIndexCount = 0;
+    NSUInteger removeIndex;
 
     while(NSNotFound != idx) {
 	if(idx >= insertIndex) {
@@ -93,7 +93,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 
     [panel setDirectoryURL:dirurl];
     [panel beginSheetModalForWindow:prefView completionHandler:^(NSInteger result) {
-        if(result == NSOKButton) {
+        if(result == NSModalResponseOK) {
             [[self selection] setValue:[[panel URL] path]
                                 forKey:SKKDictionarySetKeys::location];
         }
@@ -102,7 +102,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 
 - (BOOL)tableView:(NSTableView*)tv writeRowsWithIndexes:(NSIndexSet*)rowIndexes toPasteboard:(NSPasteboard*)pboard {
     NSArray* typesArray = [NSArray arrayWithObjects:DictionaryRowsType, nil];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes requiringSecureCoding:YES error:nil];
 
     [pboard declareTypes:typesArray owner:self];
     [pboard setData:data forType:DictionaryRowsType];
@@ -141,7 +141,7 @@ static NSString* DictionaryRowsType = @"DictionaryRowsType";
 
     NSPasteboard* pboard = [info draggingPasteboard];
     NSData* rowData = [pboard dataForType:DictionaryRowsType];
-    NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
+    NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSIndexSet class] fromData:rowData error:nil];
 
     [self moveObjectsInArrangedObjectsFromIndexes:rowIndexes toIndex:row];
 

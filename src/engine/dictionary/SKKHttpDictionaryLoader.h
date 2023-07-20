@@ -37,7 +37,7 @@ class SKKHttpDictionaryLoader : public SKKDictionaryLoader {
 
     bool request(net::socket::tcpstream& http);
     int content_length(net::socket::tcpstream& http);
-    int file_size(const std::string& path) const;
+    long long file_size(const std::string& path) const;
     bool download(net::socket::tcpstream& http, int length);
 
 public:

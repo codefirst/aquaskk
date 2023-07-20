@@ -38,10 +38,7 @@ namespace {
     }
 
     int ActiveProcessID() {
-        NSDictionary* info = [[NSWorkspace sharedWorkspace] activeApplication];
-        NSNumber* pid = [info objectForKey:@"NSApplicationProcessIdentifier"];
-
-        return [pid intValue];
+        return [[NSWorkspace sharedWorkspace] frontmostApplication].processIdentifier;
     }
 
     typedef std::vector<CGRect> CGRectContainer;
@@ -98,7 +95,7 @@ namespace {
     CGRectContainer list = CreateWindowBoundsListOf(ActiveProcessID());
 
     // カーソル位置がウィンドウ矩形に含まれていなければ無視する
-    int count = std::count_if(list.begin(), list.end(),
+    long count = std::count_if(list.begin(), list.end(),
                               std::bind2nd(std::ptr_fun(CGRectContainsPoint), cursor));
     if(!count) {
         return;

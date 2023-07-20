@@ -104,7 +104,7 @@ int SKKHttpDictionaryLoader::content_length(net::socket::tcpstream& http) {
     return length;
 }
 
-int SKKHttpDictionaryLoader::file_size(const std::string& path) const {
+long long SKKHttpDictionaryLoader::file_size(const std::string& path) const {
     struct stat st;
 
     if(stat(path.c_str(), &st) == 0) {
@@ -128,7 +128,7 @@ bool SKKHttpDictionaryLoader::download(net::socket::tcpstream& http, int length)
     }
 
     // ダウンロードに失敗したか？
-    int new_size = file_size(tmp_path_);
+    long long new_size = file_size(tmp_path_);
     if(new_size != length) {
         std::cerr << "SKKHttpDictionaryLoader::download(): size conflict: expected="
                   << length << ", actual=" << new_size << std::endl;
@@ -136,7 +136,7 @@ bool SKKHttpDictionaryLoader::download(net::socket::tcpstream& http, int length)
     }
 
     // 既存の辞書と比較して小さすぎないか？
-    int old_size = file_size(path_);
+    long long old_size = file_size(path_);
     if(old_size != 0) {
         const int safety_margin = 32 * 1024; // 32KB
 

@@ -35,7 +35,7 @@
     if(self) {
         view_ = [[AnnotationView alloc] init];
         window_ = [[NSWindow alloc] initWithContentRect:[view_ frame]
-                                    styleMask:NSBorderlessWindowMask
+                                              styleMask:NSWindowStyleMaskBorderless
                                     backing:NSBackingStoreBuffered
                                     defer:YES];
         [window_ setContentView:view_];
