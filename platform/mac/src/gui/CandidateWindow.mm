@@ -36,7 +36,7 @@
     if(self) {
         view_ = [[CandidateView alloc] initWithFrame:NSZeroRect];
         window_ = [[NSWindow alloc] initWithContentRect:NSZeroRect
-                                    styleMask:NSBorderlessWindowMask
+                                              styleMask:NSWindowStyleMaskBorderless
                                     backing:NSBackingStoreBuffered
                                     defer:YES];
         [window_ setIgnoresMouseEvents:YES];
@@ -84,7 +84,7 @@
     [window_ orderOut:nil];
 }
 
-- (int)indexOfLabel:(char)label {
+- (NSUInteger)indexOfLabel:(char)label {
     NSString* target = [NSString stringWithFormat:@"%c", label];
     NSRange result = [labels_ rangeOfString:target options:NSCaseInsensitiveSearch];
 

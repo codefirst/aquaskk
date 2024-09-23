@@ -127,7 +127,7 @@
 
     NSScrollView* scrollView = [[NSScrollView alloc] initWithFrame:frame];
     [scrollView setHasVerticalScroller:YES];
-    [[scrollView verticalScroller] setControlSize:NSSmallControlSize];
+    [[scrollView verticalScroller] setControlSize:NSControlSizeSmall];
 
     textView_ = [[NSTextView alloc] initWithFrame:[[scrollView contentView] frame]];
     [textView_ setEditable:NO];

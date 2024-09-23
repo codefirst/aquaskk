@@ -141,7 +141,7 @@ namespace {
 }
 
 - (void)keyboardLayoutDidChange:(id)sender {
-    int index = [layoutPopUp_ indexOfSelectedItem];
+    NSInteger index = [layoutPopUp_ indexOfSelectedItem];
     NSString* selectedLayout = [layoutNames_ objectAtIndex:index];
 
     if(selectedLayout) {
@@ -158,7 +158,7 @@ namespace {
 
     [panel setDirectoryURL:dirurl];
     [panel beginSheetModalForWindow:prefWindow_ completionHandler:^(NSInteger result) {
-        if(result == NSOKButton) {
+        if(result == NSModalResponseOK) {
             [preferences_ setObject:[[panel URL] path]
                              forKey:SKKUserDefaultKeys::user_dictionary_path];
         }

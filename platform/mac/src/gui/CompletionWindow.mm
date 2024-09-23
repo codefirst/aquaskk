@@ -35,7 +35,7 @@
     if(self) {
         view_ = [[CompletionView alloc] init];
         window_ = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 0, 0)
-                                    styleMask:NSBorderlessWindowMask
+                                              styleMask:NSWindowStyleMaskBorderless
                                     backing:NSBackingStoreBuffered
                                     defer:YES];
         [window_ setBackgroundColor:[NSColor clearColor]];

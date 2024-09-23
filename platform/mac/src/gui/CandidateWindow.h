@@ -40,7 +40,7 @@
 - (void)setPage:(NSRange)page;
 - (void)showAt:(NSPoint)origin level:(int)level;
 - (void)hide;
-- (int)indexOfLabel:(char)label;
+- (NSUInteger)indexOfLabel:(char)label;
 - (id)newCandidateCell;
 
 @end

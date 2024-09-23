@@ -40,7 +40,7 @@
 - (id)init {
     if(self = [super init]) {
         window_ = [[NSWindow alloc] initWithContentRect:NSZeroRect
-                                    styleMask:NSBorderlessWindowMask
+                                              styleMask:NSWindowStyleMaskBorderless
                                     backing:NSBackingStoreBuffered
                                     defer:YES];
         [window_ setBackgroundColor:[NSColor clearColor]];

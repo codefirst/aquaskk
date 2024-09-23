@@ -114,7 +114,7 @@ bool SKKWindowSelector::Select(char label) {
 }
 
 void SKKWindowSelector::Show() {
-    window_->Update(view_.begin(), view_.end(), cursor_pos_, page_pos_ + 1, pages_.size());
+    window_->Update(view_.begin(), view_.end(), cursor_pos_, page_pos_ + 1, (int)pages_.size());
     window_->Show();
 }
 
@@ -133,7 +133,7 @@ int SKKWindowSelector::minPage() const {
 }
 
 int SKKWindowSelector::maxPage() const {
-    return pages_.size() - 1;
+    return (int)(pages_.size() - 1);
 }
 
 int SKKWindowSelector::minPosition() const {

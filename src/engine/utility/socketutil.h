@@ -322,11 +322,11 @@ namespace socket {
         }
 
         virtual int sync() {
-            int remain = pptr() - pbase();
+            long remain = pptr() - pbase();
             int offset = 0;
 
             while(0 < remain) {
-                int result = ::send(fd_, pbase() + offset, remain, 0);
+                ssize_t result = ::send(fd_, pbase() + offset, remain, 0);
                 if(result == -1) return -1;
 
                 remain -= result;
@@ -342,7 +342,7 @@ namespace socket {
             setg(eback(), eback(), eback());
 
             // fill buffer
-            int length = ::recv(fd_, gptr(), BUFFER_SIZE, 0);
+            ssize_t length = ::recv(fd_, gptr(), BUFFER_SIZE, 0);
             if(length == 0 || length == -1) return traits_type::eof();
 
             setg(eback(), gptr(), gptr() + length);
@@ -589,7 +589,7 @@ namespace socket {
             return select();
         }
 
-        int wait(long seconds, long micro_seconds = 0) {
+        int wait(long seconds, int micro_seconds = 0) {
             timeval tv;
 
             tv.tv_sec = seconds;

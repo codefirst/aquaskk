@@ -233,7 +233,7 @@ struct utf8 {
     //      if(common_prefix("1漢字2", "1漢字3") == "1漢字") { ...
     //
     static std::string common_prefix(const std::string&s1, const std::string& s2) {
-        int max = std::min(s1.size(), s2.size());
+        const unsigned long max = std::min(s1.size(), s2.size());
         utf8::const_iterator iter1(s1.begin());
         utf8::const_iterator iter2(s2.begin());
 

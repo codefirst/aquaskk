@@ -34,7 +34,7 @@ class MacCandidateWindow : public SKKCandidateWindow {
     NSMutableArray* candidates_;
     NSRange page_;
     int cursor_;
-    int cellCount_;
+    NSUInteger cellCount_;
     CandidateWindow* window_;
 
     void reloadUserDefaults();

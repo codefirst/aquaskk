@@ -36,7 +36,7 @@
     if(self) {
         view_ = [[MessengerView alloc] init];
         window_ = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 0, 0)
-                                    styleMask:NSBorderlessWindowMask
+                                              styleMask:NSWindowStyleMaskBorderless
                                     backing:NSBackingStoreBuffered
                                     defer:YES];
         [window_ setBackgroundColor:[NSColor clearColor]];

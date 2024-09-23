@@ -43,7 +43,7 @@ class subrange {
     Iter end_;
 
     void adjust(Container& container, size_type pos, size_type length) {
-	unsigned size = container.size();
+	unsigned long size = container.size();
 
 	if(pos < size) {
 	    begin_ = container.begin() + pos;
