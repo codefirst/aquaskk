@@ -748,7 +748,7 @@ void eucj_to_utf8::emit(unsigned int ucs) {
 
     // we need two UCS characters
     ucs4_to_utf8((ucs >> 16) & 0xffff, output_);
-    ucs4_to_utf8(ucs & 0xfff, output_);
+    ucs4_to_utf8(ucs & 0xffff, output_);
 }
 
 void eucj_to_utf8::neutral(unsigned char c) {
